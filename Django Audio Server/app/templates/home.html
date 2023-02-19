@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<h2>Screwdriver</h2>
+<form enctype="multipart/form-data" method="post">
+    {% csrf_token %}
+    <input type="file" name="file">
+    <input type="submit" value="Upload">
+</form>
+<h2>Uploaded files:</h2>
+<u1>
+    {% for file in files %}
+    <li><a>{{ file }}</a></li>
+        <audio controls id="{{ file }}">
+            <source src="/audio/{{ file }}" type="audio/mp3">
+        </audio>
+    {% endfor %}
+</u1>
